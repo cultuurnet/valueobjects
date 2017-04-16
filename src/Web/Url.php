@@ -23,7 +23,7 @@ class Url implements ValueObjectInterface
     /** @var Path */
     protected $path;
 
-    /** @var PortNumber */
+    /** @var PortNumberInterface */
     protected $port;
 
     /** @var QueryString */
