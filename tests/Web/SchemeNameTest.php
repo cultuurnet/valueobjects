@@ -13,7 +13,10 @@ class SchemeNameTest extends TestCase
         $this->assertInstanceOf('ValueObjects\Web\SchemeName', $scheme);
     }
 
-    /** @expectedException ValueObjects\Exception\InvalidNativeArgumentException */
+    /**
+     * @expectedException ValueObjects\Exception\InvalidNativeArgumentException
+     * @expectedExceptionMessage Argument "ht*tp" is invalid. Allowed types for argument are "string (valid scheme name)".
+     */
     public function testInvalidSchemeName()
     {
         new SchemeName('ht*tp');
