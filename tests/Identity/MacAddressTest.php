@@ -6,13 +6,19 @@ use ValueObjects\Identity\MacAddress;
 
 final class MacAddressTest extends \PHPUnit_Framework_TestCase
 {
-    /** @expectedException ValueObjects\Exception\InvalidNativeArgumentException */
+    /**
+     * @expectedException ValueObjects\Exception\InvalidNativeArgumentException
+     * @expectedExceptionMessage Argument "281474976710656" is invalid. Allowed types for argument are "mac address (<= 281,474,976,710,655)".
+     */
     public function testTooBigNativeArgument()
     {
         new MacAddress(pow(2, 48));
     }
 
-    /** @expectedException ValueObjects\Exception\InvalidNativeArgumentException */
+    /**
+     * @expectedException ValueObjects\Exception\InvalidNativeArgumentException
+     * @expectedExceptionMessage Argument "-1" is invalid. Allowed types for argument are "int (>=0)".
+     */
     public function testNegativeNativeArgument()
     {
         new MacAddress(-1);
