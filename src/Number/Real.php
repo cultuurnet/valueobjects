@@ -30,13 +30,13 @@ class Real implements ValueObjectInterface, NumberInterface
      */
     public function __construct($value)
     {
-        $value = \filter_var($value, FILTER_VALIDATE_FLOAT);
+        $filteredValue = \filter_var($value, FILTER_VALIDATE_FLOAT);
 
-        if (false === $value) {
+        if (false === $filteredValue) {
             throw new InvalidNativeArgumentException($value, array('float'));
         }
 
-        $this->value = $value;
+        $this->value = $filteredValue;
     }
 
     /**

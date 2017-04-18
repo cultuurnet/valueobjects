@@ -19,12 +19,12 @@ class Natural extends Integer
             )
         );
 
-        $value = filter_var($value, FILTER_VALIDATE_INT, $options);
+        $filteredValue = filter_var($value, FILTER_VALIDATE_INT, $options);
 
-        if (false === $value) {
+        if (false === $filteredValue) {
             throw new InvalidNativeArgumentException($value, array('int (>=0)'));
         }
 
-        parent::__construct($value);
+        parent::__construct($filteredValue);
     }
 }
