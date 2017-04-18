@@ -17,14 +17,14 @@ class Latitude extends Real
      */
     public function __construct($value)
     {
-        $value = \filter_var($value, FILTER_VALIDATE_FLOAT);
+        $filteredValue = \filter_var($value, FILTER_VALIDATE_FLOAT);
 
-        if (false === $value) {
+        if (false === $filteredValue) {
             throw new InvalidNativeArgumentException($value, array('float'));
         }
 
         // normalization process through Coordinate object
-        $coordinate = new BaseCoordinate(array($value, 0));
+        $coordinate = new BaseCoordinate(array($filteredValue, 0));
         $latitude   = $coordinate->getLatitude();
 
         $this->value = $latitude;
