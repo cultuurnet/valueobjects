@@ -18,7 +18,10 @@ class LongitudeTest extends TestCase
         $this->assertEquals(-179, $longitude->toNative());
     }
 
-    /** @expectedException ValueObjects\Exception\InvalidNativeArgumentException */
+    /**
+     * @expectedException ValueObjects\Exception\InvalidNativeArgumentException
+     * @expectedExceptionMessage Argument "invalid" is invalid. Allowed types for argument are "float".
+     */
     public function testInvalidLongitude()
     {
         new Longitude('invalid');

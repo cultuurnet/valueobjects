@@ -37,7 +37,10 @@ class RealTest extends TestCase
         $this->assertFalse($real1->sameValueAs($mock));
     }
 
-    /** @expectedException ValueObjects\Exception\InvalidNativeArgumentException */
+    /**
+     * @expectedException ValueObjects\Exception\InvalidNativeArgumentException
+     * @expectedExceptionMessage Argument "invalid" is invalid. Allowed types for argument are "float".
+     */
     public function testInvalidNativeArgument()
     {
         new Real('invalid');

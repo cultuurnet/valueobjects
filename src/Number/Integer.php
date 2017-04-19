@@ -15,13 +15,13 @@ class Integer extends Real
      */
     public function __construct($value)
     {
-        $value = filter_var($value, FILTER_VALIDATE_INT);
+        $filteredValue = filter_var($value, FILTER_VALIDATE_INT);
 
-        if (false === $value) {
+        if (false === $filteredValue) {
             throw new InvalidNativeArgumentException($value, array('int'));
         }
 
-        parent::__construct($value);
+        parent::__construct($filteredValue);
     }
 
     /**

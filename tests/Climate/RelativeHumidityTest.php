@@ -17,6 +17,7 @@ class RelativeHumidityTest extends TestCase
 
     /**
      * @expectedException \ValueObjects\Exception\InvalidNativeArgumentException
+     * @expectedExceptionMessage Argument "128" is invalid. Allowed types for argument are "int (>=0, <=100)".
      */
     public function testInvalidRelativeHumidity()
     {

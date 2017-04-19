@@ -35,12 +35,12 @@ class RelativeHumidity extends Natural
             'options' => array('min_range' => self::MIN, 'max_range' => self::MAX)
         );
 
-        $value = filter_var($value, FILTER_VALIDATE_INT, $options);
+        $filteredValue = filter_var($value, FILTER_VALIDATE_INT, $options);
 
-        if (false === $value) {
+        if (false === $filteredValue) {
             throw new InvalidNativeArgumentException($value, array('int (>=' . self::MIN . ', <=' . self::MAX . ')'));
         }
 
-        parent::__construct($value);
+        parent::__construct($filteredValue);
     }
 }

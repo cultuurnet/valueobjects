@@ -18,7 +18,10 @@ class LatitudeTest extends TestCase
         $this->assertEquals(90, $latitude->toNative());
     }
 
-    /** @expectedException ValueObjects\Exception\InvalidNativeArgumentException */
+    /**
+     * @expectedException ValueObjects\Exception\InvalidNativeArgumentException
+     * @expectedExceptionMessage Argument "invalid" is invalid. Allowed types for argument are "float".
+     */
     public function testInvalidLatitude()
     {
         new Latitude('invalid');

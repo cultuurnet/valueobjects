@@ -15,13 +15,13 @@ final class MacAddress extends Natural
             )
         );
 
-        $value = filter_var($value, FILTER_VALIDATE_INT, $options);
+        $filteredValue = filter_var($value, FILTER_VALIDATE_INT, $options);
 
-        if (false === $value) {
+        if (false === $filteredValue) {
             throw new InvalidNativeArgumentException($value, array('mac address (<= 281,474,976,710,655)'));
         }
 
-        parent::__construct($value);
+        parent::__construct($filteredValue);
     }
 
     /**

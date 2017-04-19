@@ -21,7 +21,10 @@ class SecondTest extends TestCase
         $this->assertEquals(\intval(date('s')), $second->toNative());
     }
 
-    /** @expectedException ValueObjects\Exception\InvalidNativeArgumentException */
+    /**
+     * @expectedException ValueObjects\Exception\InvalidNativeArgumentException
+     * @expectedExceptionMessage Argument "60" is invalid. Allowed types for argument are "int (>=0, <=59)".
+     */
     public function testInvalidSecond()
     {
         new Second(60);
