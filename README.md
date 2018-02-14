@@ -1,3 +1,9 @@
+# IMPORTANT!
+
+This is a fork of the `nicolopignatelli/valueobjects` library which was removed from GitHub. It's kept around for backwards compatibility in projects that were already using it. However, we do not maintain this project and do not advise you to use it in production.
+
+-----------------------
+
 ValueObjects
 ============
 
