@@ -9,27 +9,25 @@ class GenderTest extends TestCase
 {
     public function testToNative()
     {
-        $gender = Gender::FEMALE();
-        $this->assertEquals(Gender::FEMALE, $gender->toNative());
+        $gender = Gender::ABIMEGENDER();
+        $this->assertEquals(Gender::ABIMEGENDER, $gender->toNative());
     }
 
     public function testSameValueAs()
     {
-        $male1 = Gender::MALE();
-        $male2 = Gender::MALE();
-        $other = Gender::OTHER();
+        $gender1 = Gender::ABIMEGENDER();
+        $gender2 = Gender::ABIMEGENDER();
 
-        $this->assertTrue($male1->sameValueAs($male2));
-        $this->assertTrue($male2->sameValueAs($male1));
-        $this->assertFalse($male1->sameValueAs($other));
+        $this->assertTrue($gender1->sameValueAs($gender1));
+        $this->assertTrue($gender2->sameValueAs($gender2));
 
         $mock = $this->getMock('ValueObjects\ValueObjectInterface');
-        $this->assertFalse($male1->sameValueAs($mock));
+        $this->assertFalse($gender1->sameValueAs($mock));
     }
 
     public function testToString()
     {
-        $sex = Gender::FEMALE();
-        $this->assertEquals('female', $sex->__toString());
+        $sex = Gender::ABIMEGENDER();
+        $this->assertEquals('abimegender', $sex->__toString());
     }
 }
