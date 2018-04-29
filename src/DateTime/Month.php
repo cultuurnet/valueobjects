@@ -4,6 +4,20 @@ namespace ValueObjects\DateTime;
 
 use ValueObjects\Enum\Enum;
 
+/**
+ * @method static Month JANUARY()
+ * @method static Month FEBRUARY()
+ * @method static Month MARCH()
+ * @method static Month APRIL()
+ * @method static Month MAY()
+ * @method static Month JUNE()
+ * @method static Month JULY()
+ * @method static Month AUGUST()
+ * @method static Month SEPTEMBER()
+ * @method static Month OCTOBER()
+ * @method static Month NOVEMBER()
+ * @method static Month DECEMBER()
+ */
 class Month extends Enum
 {
     const JANUARY   = 'January';
@@ -41,7 +55,7 @@ class Month extends Enum
     {
         $month = \strtoupper($date->format('F'));
 
-        return static::getByName($month);
+        return static::byName($month);
     }
 
     /**

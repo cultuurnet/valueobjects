@@ -2,6 +2,7 @@
 
 namespace ValueObjects\Geography;
 
+use ValueObjects\StringLiteral\StringLiteral;
 use ValueObjects\Util\Util;
 use ValueObjects\ValueObjectInterface;
 
@@ -19,7 +20,7 @@ class Country implements ValueObjectInterface
     public static function fromNative()
     {
         $codeString = \func_get_arg(0);
-        $code       = CountryCode::getByName($codeString);
+        $code       = CountryCode::byName($codeString);
         $country    = new static($code);
 
         return $country;

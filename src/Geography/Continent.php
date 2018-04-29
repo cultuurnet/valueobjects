@@ -4,6 +4,15 @@ namespace ValueObjects\Geography;
 
 use ValueObjects\Enum\Enum;
 
+/**
+ * @method static Continent AFRICA()
+ * @method static Continent EUROPE()
+ * @method static Continent ASIA()
+ * @method static Continent NORTH_AMERICA()
+ * @method static Continent SOUTH_AMERICA()
+ * @method static Continent ANTARCTICA()
+ * @method static Continent AUSTRALIA()
+ */
 class Continent extends Enum
 {
     const AFRICA        = 'Africa';

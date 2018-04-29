@@ -4,6 +4,15 @@ namespace ValueObjects\DateTime;
 
 use ValueObjects\Enum\Enum;
 
+/**
+ * @method static WeekDay MONDAY()
+ * @method static WeekDay TUESDAY()
+ * @method static WeekDay WEDNESDAY()
+ * @method static WeekDay THURSDAY()
+ * @method static WeekDay FRIDAY()
+ * @method static WeekDay SATURDAY()
+ * @method static WeekDay SUNDAY()
+ */
 class WeekDay extends Enum
 {
     const MONDAY    = 'Monday';
@@ -36,7 +45,7 @@ class WeekDay extends Enum
     {
         $weekDay = \strtoupper($date->format('l'));
 
-        return static::getByName($weekDay);
+        return static::byName($weekDay);
     }
 
     /**
