@@ -9,7 +9,7 @@
         },
         {
             "name": "Contributors",
-            "homepage": "https://github.com/cultuurnet/valueobjects/graphs/contributors"
+            "homepage": "https://github.com/orkin/valueobjects/graphs/contributors"
         }
     ],
     "require": {
