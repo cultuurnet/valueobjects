@@ -1,5 +1,5 @@
 {
-    "name": "cultuurnet/valueobjects",
+    "name": "orkin/valueobjects",
     "description": "A PHP library/collection of classes aimed to help developers using and understanding immutable objects.",
     "license": "MIT",
     "authors": [
