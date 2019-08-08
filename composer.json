@@ -15,10 +15,10 @@
     "require": {
         "php": ">=5.3.3",
         "ramsey/uuid": "~2.5",
-        "mathiasverraes/money": "~1.2",
         "marc-mabe/php-enum": "~1.0",
         "zendframework/zend-validator": "~2.2",
-        "league/geotools": "~0.3.1"
+        "league/geotools": "~0.3.1",
+        "moneyphp/money": "~1.3"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
