@@ -7,6 +7,7 @@ use ValueObjects\DateTime\MonthDay;
 use ValueObjects\DateTime\Year;
 use ValueObjects\Tests\TestCase;
 use ValueObjects\DateTime\Date;
+use ValueObjects\ValueObjectInterface;
 
 class DateTest extends TestCase
 {
@@ -49,7 +50,7 @@ class DateTest extends TestCase
         $this->assertTrue($date1->sameValueAs($date2));
         $this->assertFalse($date1->sameValueAs($date3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($date1->sameValueAs($mock));
     }
 

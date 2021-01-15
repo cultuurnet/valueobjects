@@ -15,6 +15,7 @@ use ValueObjects\DateTime\DateTime;
 use ValueObjects\DateTime\DateTimeWithTimeZone;
 use ValueObjects\DateTime\TimeZone;
 use ValueObjects\StringLiteral\StringLiteral;
+use ValueObjects\ValueObjectInterface as ValueObjectInterfaceAlias;
 
 class DateTimeWithTimeZoneTest extends TestCase
 {
@@ -69,7 +70,7 @@ class DateTimeWithTimeZoneTest extends TestCase
         $this->assertTrue($dateTimeWithTz1->sameValueAs($dateTimeWithTz2));
         $this->assertFalse($dateTimeWithTz1->sameValueAs($dateTimeWithTz3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterfaceAlias::class);
         $this->assertFalse($dateTimeWithTz1->sameValueAs($mock));
     }
 
@@ -89,7 +90,7 @@ class DateTimeWithTimeZoneTest extends TestCase
         $this->assertTrue($dateTimeWithTz1->sameTimestampAs($dateTimeWithTz2));
         $this->assertFalse($dateTimeWithTz1->sameValueAs($dateTimeWithTz2));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterfaceAlias::class);
         $this->assertFalse($dateTimeWithTz1->sameTimestampAs($mock));
     }
 

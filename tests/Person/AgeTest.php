@@ -4,6 +4,7 @@ namespace ValueObjects\Tests\Number;
 
 use ValueObjects\Person\Age;
 use ValueObjects\Tests\TestCase;
+use ValueObjects\ValueObjectInterface;
 
 class AgeTest extends TestCase
 {
@@ -23,7 +24,7 @@ class AgeTest extends TestCase
         $this->assertTrue($age2->sameValueAs($age1));
         $this->assertFalse($age1->sameValueAs($age3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($age1->sameValueAs($mock));
     }
 

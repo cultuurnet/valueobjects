@@ -3,8 +3,9 @@
 namespace ValueObjects\Tests\Identity;
 
 use ValueObjects\Identity\MacAddress;
+use ValueObjects\Tests\TestCase;
 
-final class MacAddressTest extends \PHPUnit_Framework_TestCase
+final class MacAddressTest extends TestCase
 {
     /**
      * @expectedException ValueObjects\Exception\InvalidNativeArgumentException

@@ -10,6 +10,7 @@ class LongitudeTest extends TestCase
     public function testValidLongitude()
     {
         new Longitude(16.555838);
+        $this->addToAssertionCount(1);
     }
 
     public function testNormalization()

@@ -5,6 +5,7 @@ namespace ValueObjects\Tests\Geography;
 use ValueObjects\Geography\Street;
 use ValueObjects\StringLiteral\StringLiteral;
 use ValueObjects\Tests\TestCase;
+use ValueObjects\ValueObjectInterface;
 
 class StreetTest extends TestCase
 {
@@ -36,7 +37,7 @@ class StreetTest extends TestCase
         $this->assertTrue($street2->sameValueAs($this->street));
         $this->assertFalse($this->street->sameValueAs($street3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($this->street->sameValueAs($mock));
     }
 

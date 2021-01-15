@@ -5,6 +5,7 @@ namespace ValueObjects\Tests\Structure;
 use ValueObjects\StringLiteral\StringLiteral;
 use ValueObjects\Structure\KeyValuePair;
 use ValueObjects\Tests\TestCase;
+use ValueObjects\ValueObjectInterface;
 
 class KeyValuePairTest extends TestCase
 {
@@ -37,7 +38,7 @@ class KeyValuePairTest extends TestCase
         $this->assertTrue($keyValuePair2->sameValueAs($this->keyValuePair));
         $this->assertFalse($this->keyValuePair->sameValueAs($keyValuePair3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($this->keyValuePair->sameValueAs($mock));
     }
 

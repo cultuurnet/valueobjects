@@ -10,6 +10,7 @@ class LatitudeTest extends TestCase
     public function testValidLatitude()
     {
         new Latitude(40.829137);
+        $this->addToAssertionCount(1);
     }
 
     public function testNormalization()

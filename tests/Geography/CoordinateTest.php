@@ -8,6 +8,7 @@ use ValueObjects\Geography\Latitude;
 use ValueObjects\Geography\Longitude;
 use ValueObjects\StringLiteral\StringLiteral;
 use ValueObjects\Tests\TestCase;
+use ValueObjects\ValueObjectInterface;
 
 class CoordinateTest extends TestCase
 {
@@ -55,7 +56,7 @@ class CoordinateTest extends TestCase
         $this->assertTrue($coordinate2->sameValueAs($this->coordinate));
         $this->assertFalse($this->coordinate->sameValueAs($coordinate3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($this->coordinate->sameValueAs($mock));
     }
 

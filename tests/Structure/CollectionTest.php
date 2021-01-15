@@ -7,6 +7,7 @@ use ValueObjects\Number\Natural;
 use ValueObjects\StringLiteral\StringLiteral;
 use ValueObjects\Structure\Collection;
 use ValueObjects\Tests\TestCase;
+use ValueObjects\ValueObjectInterface;
 
 class CollectionTest extends TestCase
 {
@@ -76,7 +77,7 @@ class CollectionTest extends TestCase
         $this->assertTrue($collection2->sameValueAs($this->collection));
         $this->assertFalse($this->collection->sameValueAs($collection3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($this->collection->sameValueAs($mock));
     }
 

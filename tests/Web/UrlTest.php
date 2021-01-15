@@ -4,6 +4,7 @@ namespace ValueObjects\Tests\Web;
 
 use ValueObjects\StringLiteral\StringLiteral;
 use ValueObjects\Tests\TestCase;
+use ValueObjects\ValueObjectInterface;
 use ValueObjects\Web\FragmentIdentifier;
 use ValueObjects\Web\NullPortNumber;
 use ValueObjects\Web\Path;
@@ -88,7 +89,7 @@ class UrlTest extends TestCase
         $this->assertTrue($url2->sameValueAs($this->url));
         $this->assertFalse($this->url->sameValueAs($url3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($this->url->sameValueAs($mock));
     }
 

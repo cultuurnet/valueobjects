@@ -8,6 +8,7 @@ use ValueObjects\Money\Money;
 use ValueObjects\Money\Currency;
 use ValueObjects\Money\CurrencyCode;
 use ValueObjects\Number\Integer;
+use ValueObjects\ValueObjectInterface;
 
 class MoneyTest extends TestCase
 {
@@ -32,7 +33,7 @@ class MoneyTest extends TestCase
         $this->assertTrue($money2->sameValueAs($money1));
         $this->assertFalse($money1->sameValueAs($money3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($money1->sameValueAs($mock));
     }
 

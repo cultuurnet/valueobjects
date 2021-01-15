@@ -5,6 +5,7 @@ namespace ValueObjects\Tests\Money;
 use ValueObjects\Money\CurrencyCode;
 use ValueObjects\Tests\TestCase;
 use ValueObjects\Money\Currency;
+use ValueObjects\ValueObjectInterface;
 
 class CurrencyTest extends TestCase
 {
@@ -26,7 +27,7 @@ class CurrencyTest extends TestCase
         $this->assertTrue($eur2->sameValueAs($eur1));
         $this->assertFalse($eur1->sameValueAs($usd));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($eur1->sameValueAs($mock));
     }
 

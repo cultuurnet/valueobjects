@@ -7,6 +7,7 @@ use ValueObjects\DateTime\Second;
 use ValueObjects\DateTime\Hour;
 use ValueObjects\Tests\TestCase;
 use ValueObjects\DateTime\Time;
+use ValueObjects\ValueObjectInterface;
 
 class TimeTest extends TestCase
 {
@@ -49,7 +50,7 @@ class TimeTest extends TestCase
         $this->assertTrue($time1->sameValueAs($time2));
         $this->assertFalse($time1->sameValueAs($time3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($time1->sameValueAs($mock));
     }
 

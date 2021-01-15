@@ -6,6 +6,7 @@ use ValueObjects\Geography\Country;
 use ValueObjects\Geography\CountryCode;
 use ValueObjects\StringLiteral\StringLiteral;
 use ValueObjects\Tests\TestCase;
+use ValueObjects\ValueObjectInterface;
 
 class CountryTest extends TestCase
 {
@@ -26,7 +27,7 @@ class CountryTest extends TestCase
         $this->assertTrue($country1->sameValueAs($country2));
         $this->assertFalse($country1->sameValueAs($country3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($country1->sameValueAs($mock));
     }
 

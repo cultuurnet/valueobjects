@@ -14,7 +14,7 @@ class StringLiteral implements ValueObjectInterface
      * Returns a StringLiteral object given a PHP native string as parameter.
      *
      * @param  string $value
-     * @return StringLiteral
+     * @return static
      */
     public static function fromNative()
     {

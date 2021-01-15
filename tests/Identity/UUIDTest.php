@@ -4,6 +4,7 @@ namespace ValueObjects\Tests\Identity;
 
 use ValueObjects\Identity\UUID;
 use ValueObjects\Tests\TestCase;
+use ValueObjects\ValueObjectInterface;
 
 class UUIDTest extends TestCase
 {
@@ -31,7 +32,7 @@ class UUIDTest extends TestCase
         $this->assertTrue($uuid1->sameValueAs($uuid2));
         $this->assertFalse($uuid1->sameValueAs($uuid3));
 
-        $mock = $this->getMock('ValueObjects\ValueObjectInterface');
+        $mock = $this->createMock(ValueObjectInterface::class);
         $this->assertFalse($uuid1->sameValueAs($mock));
     }
 
