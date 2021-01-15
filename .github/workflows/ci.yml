@@ -29,5 +29,5 @@ jobs:
             - name: Install dependencies
               run: composer install --no-progress --no-suggest
 
-            - name: Run Phing
-              run: composer phing
+            - name: Run Tests
+              run: bin/phpunit
