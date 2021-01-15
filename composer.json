@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": ">=7.1",
         "ramsey/uuid": "~3.0",
         "marc-mabe/php-enum": "~1.0",
         "zendframework/zend-validator": "~2.2",
