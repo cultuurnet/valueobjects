@@ -68,6 +68,6 @@ class RealTest extends TestCase
     public function testToString()
     {
         $real = new Real(.7);
-        $this->assertEquals('.7', $real->__toString());
+        $this->assertEquals('0.7', $real->__toString());
     }
 }
