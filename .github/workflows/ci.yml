@@ -1,0 +1,33 @@
+name: CI
+
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                php-versions: ['7.1', '7.2', '7.3', '7.4']
+        name: PHP ${{ matrix.php-versions }}
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Install PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php-versions }}
+                  ini-values: xdebug.mode=coverage
+                  extensions: intl
+                  tools: composer
+
+            - name: Check PHP Version
+              run: php -v
+
+            - name: Validate composer.json
+              run: composer validate
+
+            - name: Install dependencies
+              run: composer install --no-progress --no-suggest
+
+            - name: Run Phing
+              run: composer phing
