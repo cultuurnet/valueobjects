@@ -17,7 +17,7 @@
         "ramsey/uuid": "~3.0",
         "marc-mabe/php-enum": "~1.0",
         "zendframework/zend-validator": "~2.2",
-        "league/geotools": "^0.7",
+        "league/geotools": "^0.7.0",
         "moneyphp/money": "^3.0"
     },
     "require-dev": {
